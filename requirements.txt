@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+requests
+pydicom
+watchdog
+pyinstaller
