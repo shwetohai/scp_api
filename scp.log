@@ -1,7 +1,126 @@
-2024-07-31 13:33:16,385 - INFO - storescp started with PID: 81095
-2024-07-31 13:33:16,386 - INFO - storescp started. Press Ctrl+C to stop.
-2024-07-31 13:33:16,387 - INFO - Started monitoring ./output/
-2024-07-31 13:36:31,710 - INFO - Response from orthanc_instances api is [
+2024-07-31 16:54:15,688 - INFO - Read: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm from pydicom and this is the instance id: 1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 16:54:15,696 - INFO - study_files is: defaultdict(<class 'list'>, {'1.2.392.200036.9125.2.20021125519210948.6574024267.40448': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm']})
+
+2024-07-31 16:54:15,702 - INFO - study_instance_id already present in upload timer
+
+2024-07-31 16:54:15,772 - INFO - Read: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM1.dcm from pydicom and this is the instance id: 1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 16:54:15,778 - INFO - study_files is: defaultdict(<class 'list'>, {'1.2.392.200036.9125.2.20021125519210948.6574024267.40448': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm', '/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM1.dcm']})
+
+2024-07-31 16:54:15,784 - INFO - study_instance_id already present in upload timer
+
+2024-07-31 16:54:15,858 - INFO - Read: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM2.dcm from pydicom and this is the instance id: 1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 16:54:15,858 - INFO - study_files is: defaultdict(<class 'list'>, {'1.2.392.200036.9125.2.20021125519210948.6574024267.40448': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm', '/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM1.dcm', '/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM2.dcm']})
+
+2024-07-31 16:54:15,858 - INFO - study_instance_id already present in upload timer
+
+2024-07-31 16:54:25,888 - INFO - created directory ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 16:54:25,888 - INFO - file inside study files is /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm
+
+2024-07-31 16:54:25,888 - INFO - new file from file is ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448/IM0.dcm
+
+2024-07-31 16:54:25,893 - INFO - file inside study files is /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM1.dcm
+
+2024-07-31 16:54:25,893 - INFO - new file from file is ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448/IM1.dcm
+
+2024-07-31 16:54:25,900 - INFO - file inside study files is /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM2.dcm
+
+2024-07-31 16:54:25,900 - INFO - new file from file is ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448/IM2.dcm
+
+2024-07-31 16:56:19,605 - INFO - Zip: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip is completed
+
+2024-07-31 16:56:19,619 - INFO - Sending /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip to orthanc instance api as an input
+
+2024-07-31 16:56:51,054 - INFO - Response from orthanc_instances api is [
+   {
+      "ID" : "50e159ac-bb9f6f7f-c0161cd2-7dd99922-5c116299",
+      "ParentPatient" : "ae1b3b06-b92b0cd6-5ea6a592-59b4730d-e2999ce9",
+      "ParentSeries" : "cbbe2e1f-dc4bc615-c82023b4-6bb38bbe-6f1c66f3",
+      "ParentStudy" : "e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875",
+      "Path" : "/instances/50e159ac-bb9f6f7f-c0161cd2-7dd99922-5c116299",
+      "Status" : "Success"
+   },
+   {
+      "ID" : "6da235df-c1102828-1a92013e-05f68872-0894a78a",
+      "ParentPatient" : "ae1b3b06-b92b0cd6-5ea6a592-59b4730d-e2999ce9",
+      "ParentSeries" : "20c974fa-90d13508-845b59ed-a414c407-25ee4f01",
+      "ParentStudy" : "e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875",
+      "Path" : "/instances/6da235df-c1102828-1a92013e-05f68872-0894a78a",
+      "Status" : "Success"
+   },
+   {
+      "ID" : "025a129e-04ac37e1-0b1bb5df-de56979d-ec1697a4",
+      "ParentPatient" : "ae1b3b06-b92b0cd6-5ea6a592-59b4730d-e2999ce9",
+      "ParentSeries" : "2f1bf8d9-52192e44-0c34b87b-46d353fc-e054e86c",
+      "ParentStudy" : "e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875",
+      "Path" : "/instances/025a129e-04ac37e1-0b1bb5df-de56979d-ec1697a4",
+      "Status" : "Success"
+   }
+]
+
+2024-07-31 16:56:51,060 - INFO - Successfully sent file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip to orthanc_studies, create patient and create patient report apis
+
+2024-07-31 16:56:51,267 - INFO - Got the patient level information successfully from orthanc_studies api
+2024-07-31 16:56:51,274 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'MS^D^LAXMIDEVI^47^YRS', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': 'F', 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
+
+2024-07-31 16:56:51,512 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 111, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:51,526 - INFO - Input to create_patient_report api is {'patient_id': 111, 'patient_study_id': 'e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875', 'patient_study_instance_id': '1.2.392.200036.9125.2.20021125519210948.6574024267.40448', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
+
+2024-07-31 16:56:51,756 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 86, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 86}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:51,969 - INFO - Got the patient level information successfully from orthanc_studies api
+2024-07-31 16:56:51,975 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'MS^D^LAXMIDEVI^47^YRS', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': 'F', 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
+
+2024-07-31 16:56:52,175 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 112, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:52,188 - INFO - Input to create_patient_report api is {'patient_id': 112, 'patient_study_id': 'e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875', 'patient_study_instance_id': '1.2.392.200036.9125.2.20021125519210948.6574024267.40448', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
+
+2024-07-31 16:56:52,436 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 87, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 87}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:52,674 - INFO - Got the patient level information successfully from orthanc_studies api
+2024-07-31 16:56:52,674 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'MS^D^LAXMIDEVI^47^YRS', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': 'F', 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
+
+2024-07-31 16:56:52,906 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 113, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:52,920 - INFO - Input to create_patient_report api is {'patient_id': 113, 'patient_study_id': 'e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875', 'patient_study_instance_id': '1.2.392.200036.9125.2.20021125519210948.6574024267.40448', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
+
+2024-07-31 16:56:53,150 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 88, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 88}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 16:56:53,180 - INFO - Successfully removed zip file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip
+2024-07-31 16:56:53,250 - INFO - Successfully removed directory /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+-------------------------------------2024-07-31 17:02:38,058 - INFO - Read: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm from pydicom and this is the instance id: 1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 17:02:38,065 - INFO - study_files is: defaultdict(<class 'list'>, {'1.2.392.200036.9125.2.20021125519210948.6574024267.40448': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm']})
+
+2024-07-31 17:02:38,071 - INFO - study_instance_id already present in upload timer
+
+2024-07-31 17:02:38,126 - INFO - Read: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/I190.dcm from pydicom and this is the instance id: 1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0
+
+2024-07-31 17:02:38,132 - INFO - study_files is: defaultdict(<class 'list'>, {'1.2.392.200036.9125.2.20021125519210948.6574024267.40448': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm'], '1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0': ['/Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/I190.dcm']})
+
+2024-07-31 17:02:38,139 - INFO - study_instance_id already present in upload timer
+
+2024-07-31 17:02:48,091 - INFO - created directory ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+
+2024-07-31 17:02:48,096 - INFO - file inside study files is /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/IM0.dcm
+
+2024-07-31 17:02:48,102 - INFO - new file from file is ./output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448/IM0.dcm
+
+2024-07-31 17:02:48,175 - INFO - created directory ./output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0
+
+2024-07-31 17:02:48,175 - INFO - file inside study files is /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/I190.dcm
+
+2024-07-31 17:02:48,193 - INFO - new file from file is ./output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0/I190.dcm
+
+2024-07-31 17:02:48,541 - INFO - Zip: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip is completed
+
+2024-07-31 17:02:48,548 - INFO - Sending /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip to orthanc instance api as an input
+
+2024-07-31 17:02:49,489 - INFO - Response from orthanc_instances api is [
    {
       "ID" : "9f5c0205-9324cc2c-91645185-1c600e27-628ea2ff",
       "ParentPatient" : "8e9e8135-f9e05d3e-aa128825-97883040-ec6c49a5",
@@ -9,73 +128,48 @@
       "ParentStudy" : "750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54",
       "Path" : "/instances/9f5c0205-9324cc2c-91645185-1c600e27-628ea2ff",
       "Status" : "Success"
-   },
+   }
+]
+
+2024-07-31 17:02:49,489 - INFO - Successfully sent file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip to orthanc_studies, create patient and create patient report apis
+
+2024-07-31 17:02:49,734 - INFO - Got the patient level information successfully from orthanc_studies api
+2024-07-31 17:02:49,741 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'NAME^NONE', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': None, 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
+
+2024-07-31 17:02:50,026 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 114, 'serverStatus': 2, 'warningCount': 0, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 17:02:50,033 - INFO - Input to create_patient_report api is {'patient_id': 114, 'patient_study_id': '750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54', 'patient_study_instance_id': '1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
+
+2024-07-31 17:02:50,261 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 89, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 89}, 'message': 'Data inserted Successfully'}
+
+2024-07-31 17:02:50,288 - INFO - Successfully removed zip file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip
+2024-07-31 17:02:50,289 - INFO - Successfully removed directory /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0
+2024-07-31 17:03:22,977 - INFO - Zip: /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip is completed
+
+2024-07-31 17:03:22,983 - INFO - Sending /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip to orthanc instance api as an input
+
+2024-07-31 17:03:34,940 - INFO - Response from orthanc_instances api is [
    {
-      "ID" : "660ca12b-7296358e-9a24d5e4-6bc2b1c3-6a36ea40",
-      "ParentPatient" : "8e9e8135-f9e05d3e-aa128825-97883040-ec6c49a5",
-      "ParentSeries" : "f464a6b5-34ecbc9b-46c91f87-58af8bc3-07c432ba",
-      "ParentStudy" : "750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54",
-      "Path" : "/instances/660ca12b-7296358e-9a24d5e4-6bc2b1c3-6a36ea40",
+      "ID" : "6da235df-c1102828-1a92013e-05f68872-0894a78a",
+      "ParentPatient" : "ae1b3b06-b92b0cd6-5ea6a592-59b4730d-e2999ce9",
+      "ParentSeries" : "20c974fa-90d13508-845b59ed-a414c407-25ee4f01",
+      "ParentStudy" : "e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875",
+      "Path" : "/instances/6da235df-c1102828-1a92013e-05f68872-0894a78a",
       "Status" : "Success"
    }
 ]
 
-2024-07-31 13:36:31,717 - INFO - Successfully sent file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip to orthanc_studies, create patient and create patient report apis
+2024-07-31 17:03:34,947 - INFO - Successfully sent file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip to orthanc_studies, create patient and create patient report apis
 
-2024-07-31 13:36:31,941 - INFO - Got the patient level information successfully from orthanc_studies api
-2024-07-31 13:36:31,946 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'NAME^NONE', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': None, 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
+2024-07-31 17:03:35,185 - INFO - Got the patient level information successfully from orthanc_studies api
+2024-07-31 17:03:35,190 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'MS^D^LAXMIDEVI^47^YRS', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': 'F', 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
 
-2024-07-31 13:36:32,181 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 84, 'serverStatus': 2, 'warningCount': 0, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
+2024-07-31 17:03:35,443 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 115, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
 
-2024-07-31 13:36:32,194 - INFO - Input to create_patient_report api is {'patient_id': 84, 'patient_study_id': '750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54', 'patient_study_instance_id': '1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
+2024-07-31 17:03:35,455 - INFO - Input to create_patient_report api is {'patient_id': 115, 'patient_study_id': 'e5f03652-09bd5f39-0ae393af-14b78b6a-78bd5875', 'patient_study_instance_id': '1.2.392.200036.9125.2.20021125519210948.6574024267.40448', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
 
-2024-07-31 13:36:32,409 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 59, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 59}, 'message': 'Data inserted Successfully'}
+2024-07-31 17:03:35,741 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 90, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 90}, 'message': 'Data inserted Successfully'}
 
-2024-07-31 13:36:32,436 - INFO - Successfully removed zip file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip
-2024-07-31 13:36:32,481 - INFO - Successfully removed directory /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0
-2024-07-31 15:18:44,216 - INFO - storescp stopped.
-2024-07-31 15:20:23,650 - INFO - storescp started with PID: 82005
-2024-07-31 15:20:23,650 - INFO - storescp started. Press Ctrl+C to stop.
-2024-07-31 15:20:23,652 - INFO - Started monitoring ./output/
-2024-07-31 15:20:59,368 - INFO - Response from orthanc_instances api is [
-   {
-      "ID" : "9f5c0205-9324cc2c-91645185-1c600e27-628ea2ff",
-      "ParentPatient" : "8e9e8135-f9e05d3e-aa128825-97883040-ec6c49a5",
-      "ParentSeries" : "f464a6b5-34ecbc9b-46c91f87-58af8bc3-07c432ba",
-      "ParentStudy" : "750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54",
-      "Path" : "/instances/9f5c0205-9324cc2c-91645185-1c600e27-628ea2ff",
-      "Status" : "Success"
-   },
-   {
-      "ID" : "660ca12b-7296358e-9a24d5e4-6bc2b1c3-6a36ea40",
-      "ParentPatient" : "8e9e8135-f9e05d3e-aa128825-97883040-ec6c49a5",
-      "ParentSeries" : "f464a6b5-34ecbc9b-46c91f87-58af8bc3-07c432ba",
-      "ParentStudy" : "750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54",
-      "Path" : "/instances/660ca12b-7296358e-9a24d5e4-6bc2b1c3-6a36ea40",
-      "Status" : "Success"
-   }
-]
-
-2024-07-31 15:20:59,380 - INFO - Successfully sent file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip to orthanc_studies, create patient and create patient report apis
-
-2024-07-31 15:20:59,597 - INFO - Got the patient level information successfully from orthanc_studies api
-2024-07-31 15:20:59,604 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'NAME^NONE', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': None, 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
-
-2024-07-31 15:20:59,846 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 85, 'serverStatus': 2, 'warningCount': 0, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
-
-2024-07-31 15:20:59,858 - INFO - Input to create_patient_report api is {'patient_id': 85, 'patient_study_id': '750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54', 'patient_study_instance_id': '1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
-
-2024-07-31 15:21:00,084 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 60, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 60}, 'message': 'Data inserted Successfully'}
-
-2024-07-31 15:21:00,315 - INFO - Got the patient level information successfully from orthanc_studies api
-2024-07-31 15:21:00,322 - INFO - Input to create_patient api is {'ref_Code': '', 'patient_name': 'NAME^NONE', 'patient_mobile': '', 'patient_email': '', 'dob': None, 'gender': None, 'address': '', 'client_id': 7, 'branch_id': 10, 'estatus': 1}
-
-2024-07-31 15:21:00,582 - INFO - Response from create_patient api is {'statusCode': 200, 'data': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 86, 'serverStatus': 2, 'warningCount': 0, 'message': '', 'protocol41': True, 'changedRows': 0}, 'message': 'Data inserted Successfully'}
-
-2024-07-31 15:21:00,595 - INFO - Input to create_patient_report api is {'patient_id': 86, 'patient_study_id': '750255f1-a6d57cdf-6f7692af-b6eb20e8-76b2cd54', 'patient_study_instance_id': '1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0', 'test_type_id': 0, 'test_sub_type_id': 0, 'priority_type': 'normal', 'techniques': '', 'clinical_history': '', 'clinical_history_file': None, 'results_type': '', 'doctor_id': 0, 'hospital_id': 0, 'client_login_id': '19', 'radiologist_id': 0, 'client_id': '7', 'branch_id': '10'}
-
-2024-07-31 15:21:00,818 - INFO - Response from create_patient_report api is {'statusCode': 200, 'data': {'result': {'fieldCount': 0, 'affectedRows': 1, 'insertId': 61, 'serverStatus': 2, 'warningCount': 1, 'message': '', 'protocol41': True, 'changedRows': 0}, 'patient_report_analysis_id': 61}, 'message': 'Data inserted Successfully'}
-
-2024-07-31 15:21:00,852 - INFO - Successfully removed zip file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0.zip
-2024-07-31 15:21:00,888 - INFO - Successfully removed directory /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.3.6.1.4.1.5962.99.1.1761388472.1291962045.1616669124536.2592.0
-2024-07-31 15:21:56,733 - INFO - storescp stopped.
+2024-07-31 17:03:35,776 - INFO - Successfully removed zip file /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448.zip
+2024-07-31 17:03:35,819 - INFO - Successfully removed directory /Users/shwetprakash/Downloads/ohai_work/satyam/prod_scp_satyam/output/1.2.392.200036.9125.2.20021125519210948.6574024267.40448
+2024-07-31 17:14:00,092 - INFO - storescp stopped.

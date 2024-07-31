@@ -43,13 +43,17 @@ class FileHandler(FileSystemEventHandler):
         try:
             dicom_data = pydicom.dcmread(file_path)
             study_instance_uid = dicom_data.StudyInstanceUID
+            logging.info(f"Read: {file_path} from pydicom and this is the instance id: {study_instance_uid}\n")
 
             self.study_files[study_instance_uid].append(file_path)
+            logging.info(f"study_files is: {self.study_files}\n")
 
             if study_instance_uid in self.upload_timer:
+                logging.info(f"study_instance_id already present in upload timer\n")
                 self.upload_timer[study_instance_uid].cancel()
 
             self.upload_timer[study_instance_uid] = Timer(10.0, self.executor.submit, [self.process_study, study_instance_uid])
+            
             self.upload_timer[study_instance_uid].start()
 
         except Exception as e:
@@ -63,12 +67,16 @@ class FileHandler(FileSystemEventHandler):
 
             study_dir = os.path.join(self.output_dir, study_instance_uid)
             os.makedirs(study_dir, exist_ok=True)
+            logging.info(f"created directory {study_dir}\n")
 
             for file_path in study_files:
+                logging.info(f"file inside study files is {file_path}\n")
                 new_file_path = os.path.join(study_dir, os.path.basename(file_path))
+                logging.info(f"new file from file is {new_file_path}\n")
                 os.rename(file_path, new_file_path)
 
             zip_file_path = shutil.make_archive(study_dir, 'zip', study_dir)
+            logging.info(f"Zip: {zip_file_path} is completed\n")
             self.send_file(zip_file_path)
 
         except Exception as e:
@@ -78,6 +86,7 @@ class FileHandler(FileSystemEventHandler):
         try:
             headers = {'Authorization': 'Basic T3J0aGFuYzpPcnRoYW5jQDEyMzQ='}
             with open(zip_file_path, 'rb') as f:
+                logging.info(f"Sending {zip_file_path} to orthanc instance api as an input\n")
                 response = requests.post(self.api_url, headers=headers, data=f, verify=False)
                 logging.info(f"Response from orthanc_instances api is {response.text}\n")
             
