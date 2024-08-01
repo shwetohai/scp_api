@@ -50,7 +50,8 @@ class FileHandler(FileSystemEventHandler):
 
     def handle_file(self, file_path):
         try:
-            self.set_write_access(self.output_dir)
+            # self.set_write_access(self.output_dir)
+            self.set_write_access(file_path)
             dicom_data = pydicom.dcmread(file_path)
             study_instance_uid = dicom_data.StudyInstanceUID
             logging.info(
@@ -260,7 +261,7 @@ class FileHandler(FileSystemEventHandler):
         system = platform.system()
         if system == "Windows":
             # On Windows, set the folder to be writable
-            os.chmod(folder_path, stat.S_IWRITE)
+            os.chmod(folder_path, stat.S_IWRITE | stat.S_IREAD | stat.S_IEXEC)
             logging.info(f"Write access granted to '{folder_path}' on Windows.")
         else:
             # On Unix-based systems, set permissions to allow writing (e.g., 755 or 775)
