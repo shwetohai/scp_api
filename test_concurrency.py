@@ -89,19 +89,22 @@ class FileHandler(FileSystemEventHandler):
                 new_file_path = os.path.join(study_dir, os.path.basename(file_path))
                 logging.info(f"new file from file is {new_file_path}\n")
                 os.rename(file_path, new_file_path)
+                self.set_write_access(new_file_path)
+                self.send_file(new_file_path)
 
-            zip_file_path = shutil.make_archive(study_dir, "zip", study_dir)
+            #zip_file_path = shutil.make_archive(study_dir, "zip", study_dir)
             # zip_file_path = shutil.make_archive(study_dir, "zip", study_dir, compresslevel=1)
 
-            logging.info(f"Zip: {zip_file_path} is completed\n")
-            self.send_file(zip_file_path)
+            #logging.info(f"Zip: {zip_file_path} is completed\n")
+            #self.send_file(zip_file_path)
 
         except Exception as e:
             logging.error(f"Error processing study: {study_instance_uid}, Error: {e}")
 
-    def send_file(self, zip_file_path):
+    def send_file(self, normal_file_path):
         try:
             headers = {"Authorization": "Basic T3J0aGFuYzpPcnRoYW5jQDEyMzQ="}
+            '''
             with open(zip_file_path, "rb") as f:
                 logging.info(
                     f"Sending {zip_file_path} to orthanc instance api as an input\n"
@@ -112,55 +115,71 @@ class FileHandler(FileSystemEventHandler):
                 logging.info(
                     f"Response from orthanc_instances api is {response.text}\n"
                 )
+            '''
+
+            with open(normal_file_path, 'rb') as dicom_file:
+                # Send the POST request with the DICOM file as the body
+                response = requests.post(self.api_url, headers=headers, data=dicom_file, verify=False)
+                logging.info(
+                    f"Response from orthanc_instances api is {response.text}\n"
+                )
 
             if response.status_code == 200:
                 logging.info(
-                    f"Successfully sent file {zip_file_path} to orthanc_studies, create patient and create patient report apis\n"
+                    f"Successfully sent file {normal_file_path} to orthanc_studies, create patient and create patient report apis\n"
                 )
                 self.upload(response.json())
+
+                if os.path.isfile(normal_file_path):
+                    os.remove(normal_file_path)
+                    logging.info(f"Successfully removed normal dcm file {normal_file_path} inside outputs/something directory")
+
                 # Remove the zip file
+                '''
                 if os.path.isfile(zip_file_path):
                     os.remove(zip_file_path)
                     logging.info(f"Successfully removed zip file {zip_file_path}")
-
+                '''
                 # Remove the extracted directory
+                '''
                 extracted_dir_path = zip_file_path.replace(".zip", "")
                 if os.path.isdir(extracted_dir_path):
                     shutil.rmtree(extracted_dir_path)
                     logging.info(f"Successfully removed directory {extracted_dir_path}")
+                '''
 
             else:
                 logging.info(
-                    f"Failed to send file: {zip_file_path}, Status code: {response.status_code}, {response.json()}"
+                    f"Failed to send file: {normal_file_path}, Status code: {response.status_code}, {response.json()}"
                 )
 
         except Exception as e:
-            logging.error(f"Error sending file: {zip_file_path}, Error: {e}")
+            logging.error(f"Error sending file: {normal_file_path}, Error: {e}")
 
     def upload(self, orthanc_response):
         try:
-            for i in range(0, len(orthanc_response)):
-                study_id = orthanc_response[i]["ParentStudy"]
-                api_url = f"https://pacs.smaro.app/orthanc/studies/{study_id}"
-                headers = {"Authorization": "Basic T3J0aGFuYzpPcnRoYW5jQDEyMzQ="}
-                response = requests.get(api_url, headers=headers, verify=False)
+            #for i in range(0, len(orthanc_response)):
+            study_id = orthanc_response["ParentStudy"]
+            api_url = f"https://pacs.smaro.app/orthanc/studies/{study_id}"
+            headers = {"Authorization": "Basic T3J0aGFuYzpPcnRoYW5jQDEyMzQ="}
+            response = requests.get(api_url, headers=headers, verify=False)
 
-                if response.status_code == 200:
-                    logging.info(
-                        "Got the patient level information successfully from orthanc_studies api"
-                    )
-                    patient_info = response.json()["PatientMainDicomTags"]
-                    instance_id = response.json()["MainDicomTags"]["StudyInstanceUID"]
-                    response_create_patient = self.create_patient(
-                        patient_info,
-                        response.json()["PatientMainDicomTags"]["PatientID"],
-                    )
-                    pat_id = response_create_patient.get("patient_id")
-                    self.create_patient_report(pat_id, instance_id, study_id)
-                else:
-                    logging.info(
-                        f"Failed to get the patient level information from orthanc_studies api, Status code: {response.status_code}, {response.json()}"
-                    )
+            if response.status_code == 200:
+                logging.info(
+                    "Got the patient level information successfully from orthanc_studies api"
+                )
+                patient_info = response.json()["PatientMainDicomTags"]
+                instance_id = response.json()["MainDicomTags"]["StudyInstanceUID"]
+                response_create_patient = self.create_patient(
+                    patient_info,
+                    response.json()["PatientMainDicomTags"]["PatientID"],
+                )
+                pat_id = response_create_patient.get("patient_id")
+                self.create_patient_report(pat_id, instance_id, study_id)
+            else:
+                logging.info(
+                    f"Failed to get the patient level information from orthanc_studies api, Status code: {response.status_code}, {response.json()}"
+                )
 
         except Exception as e:
             logging.error(f"Error uploading file Error: {e}")
